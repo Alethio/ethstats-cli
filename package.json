@@ -1,0 +1,33 @@
+{
+  "name": "ethstats",
+  "version": "0.2.0",
+  "description": "EthStats.net CLI client",
+  "preferGlobal": true,
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ethstats": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthStats/client-node.git"
+  },
+  "keywords": [
+    "ethstats",
+    "ethereum",
+    "blockchain",
+    "web3"
+  ],
+  "author": "Marian Oancea <marian.oancea@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EthStats/client-node/issues"
+  },
+  "homepage": "https://github.com/EthStats/client-node#readme"
+}
