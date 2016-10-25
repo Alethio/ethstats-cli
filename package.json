@@ -1,33 +1,80 @@
 {
-  "name": "ethstats",
-  "version": "0.2.0",
+  "name": "ethstats-cli",
+  "version": "0.0.0",
   "description": "EthStats.net CLI client",
+  "homepage": "https://github.com/EthStats/client-node",
+  "author": {
+    "name": "Marian Oancea",
+    "email": "contact@siteshop.ro",
+    "url": "https://github.com/cubedro"
+  },
   "preferGlobal": true,
   "directories": {
     "bin": "./bin",
     "lib": "./lib"
   },
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "bin": {
-    "ethstats": "./bin/cli.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EthStats/client-node.git"
+    "ethstats": "./bin/ethstats.js"
   },
   "keywords": [
     "ethstats",
-    "ethereum",
     "blockchain",
+    "explorer",
+    "ethereum",
+    "dashboard",
     "web3"
   ],
-  "author": "Marian Oancea <marian.oancea@gmail.com>",
+  "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "6.9.0",
+    "babel-register": "^6.9.0",
+    "boxen": "^0.8.1",
+    "chalk": "^1.1.3",
+    "cli-cursor": "^1.0.2",
+    "cli-spinners": "^0.3.0",
+    "configstore": "^2.1.0",
+    "inquirer": "^1.2.2",
+    "log-symbols": "^1.0.2",
+    "log-update": "^1.0.2",
+    "meow": "^3.7.0",
+    "ora": "^0.3.0",
+    "update-notifier": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "babel-eslint": "^6.1.2",
+    "eslint-plugin-babel": "^3.3.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-mocha": "^3.0.1",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-coveralls": "^0.1.0",
+    "gulp-babel": "^6.1.2",
+    "del": "^2.0.2",
+    "isparta": "^4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
   "license": "MIT",
+  "repository": "git@github.com:EthStats/client-node.git",
   "bugs": {
     "url": "https://github.com/EthStats/client-node/issues"
-  },
-  "homepage": "https://github.com/EthStats/client-node#readme"
+  }
 }
