@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "EthStats.net CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -40,14 +40,15 @@
     "configstore": "^2.1.0",
     "debug": "^2.2.0",
     "deepstream.io-client-js": "^1.1.1",
-    "inquirer": "^1.2.2",
+    "inquirer": "^3.2.1",
     "lodash.throttle": "^4.1.1",
     "log-symbols": "^1.0.2",
     "log-update": "^1.0.2",
     "meow": "^3.7.0",
     "ora": "^0.3.0",
     "update-notifier": "^1.0.2",
-    "web3": "^0.17.0-beta"
+    "web3": "^0.17.0-beta",
+    "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^3.1.1",
@@ -65,7 +66,8 @@
     "gulp-coveralls": "^0.1.0",
     "gulp-babel": "^6.1.2",
     "del": "^2.0.2",
-    "isparta": "^4.0.0"
+    "isparta": "^4.0.0",
+    "primus": "^7.0.2"
   },
   "eslintConfig": {
     "extends": "xo-space",
