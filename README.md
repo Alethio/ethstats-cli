@@ -31,8 +31,9 @@ $ ./bin/ethstats.js
 ## Shell options
 
 ```sh
---json, -j     Output the result as JSON
---verbose, -v  Output more detailed information
+--help, -h        Show help
+--json, -j        Output the result as JSON
+--verbose, -v     Output more detailed information
 ```
 
 ## License
