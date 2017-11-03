@@ -16,7 +16,7 @@ $ npm install
 
 ## Update
 
-> To update the client just do a "git pull" and restart the app.
+To update the client just do a "git pull" and restart the app.
 
 ## Usage
 
