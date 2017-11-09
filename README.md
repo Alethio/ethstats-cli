@@ -32,7 +32,7 @@ $ ./bin/ethstats.js
 
 ```sh
 --help, -h        Show help
---json, -j        Output the result as JSON
+--debug, -d        Output values sent to server
 --verbose, -v     Output more detailed information
 ```
 
