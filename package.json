@@ -1,7 +1,7 @@
 {
   "name": "ethstats-cli",
-  "version": "2.0.0",
-  "description": "EthStats.net CLI client",
+  "version": "2.0.1",
+  "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
     "name": "Marian Oancea",
@@ -38,8 +38,8 @@
     "cli-cursor": "^1.0.2",
     "cli-spinners": "^0.3.0",
     "configstore": "^2.1.0",
-    "debug": "^2.2.0",
-    "deepstream.io-client-js": "^1.1.1",
+    "debug": "^3.1.0",
+    "deepstream.io-client-js": "^2.3.0",
     "inquirer": "^3.2.1",
     "lodash.throttle": "^4.1.1",
     "log-symbols": "^1.0.2",
