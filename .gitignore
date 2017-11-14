@@ -39,3 +39,6 @@ jspm_packages
 
 # IntelliJ IDEA
 .idea/
+
+# Dist files
+dist/
