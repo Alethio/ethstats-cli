@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
