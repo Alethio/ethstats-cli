@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 require('babel-register');
-require('../dist/index.js');
+require('../lib/index.js');
