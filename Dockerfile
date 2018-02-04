@@ -14,6 +14,6 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "./bin/ethstats.js"]
+CMD ["node", "./bin/ethstats-cli.js"]
 
 
