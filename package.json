@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -15,7 +15,7 @@
   },
   "main": "lib/index.js",
   "bin": {
-    "ethstats": "./bin/ethstats-cli.js"
+    "ethstats-cli": "./bin/ethstats-cli.js"
   },
   "keywords": [
     "ethstats",
