@@ -39,7 +39,7 @@ $ yarn global upgrade ethstats-cli
 On the first run of the app, a node name must be provided.   
 Under that name the node will be visible on http://ethstats.net 
 ```sh
-$ ethstats
+$ ethstats-cli
 ```
 
 ## Shell options
