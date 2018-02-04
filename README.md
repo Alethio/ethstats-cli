@@ -1,6 +1,6 @@
 # ethstats-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> EthStats.net CLI client.  
+> EthStats.io CLI client.  
 >   
 >
 > This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes.
@@ -39,15 +39,16 @@ $ yarn global upgrade ethstats-cli
 On the first run of the app, a node name must be provided.   
 Under that name the node will be visible on http://ethstats.net 
 ```sh
-$ ethstats
+$ ethstats-cli
 ```
 
 ## Shell options
 
 ```sh
---help, -h        Show help
---debug, -d       Output values sent to server
---verbose, -v     Output more detailed information
+--help, -h              Show help
+--version, -V           Show version
+--debug, -d             Output values sent to server
+--verbose, -v           Output more detailed information
 ```
 
 ## License
