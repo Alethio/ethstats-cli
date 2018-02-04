@@ -45,9 +45,10 @@ $ ethstats-cli
 ## Shell options
 
 ```sh
---help, -h        Show help
---debug, -d       Output values sent to server
---verbose, -v     Output more detailed information
+--help, -h              Show help
+--version, -V           Show version
+--debug, -d             Output values sent to server
+--verbose, -v           Output more detailed information
 ```
 
 ## License
