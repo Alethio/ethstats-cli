@@ -39,16 +39,24 @@ $ yarn global upgrade ethstats-cli
 On the first run of the app, a node name must be provided.   
 Under that name the node will be visible on http://ethstats.net 
 ```sh
-$ ethstats-cli
+$ ethstats-cli <input>
 ```
 
 ## Shell options
 
 ```sh
---help, -h              Show help
---version, -V           Show version
---debug, -d             Output values sent to server
---verbose, -v           Output more detailed information
+      --help, -h                Show help
+      --version, -V             Show version
+      --debug, -d               Output values sent to server
+      --verbose, -v             Output more detailed information
+      
+      --rpc-host                RPC Host (Default: http://localhost)
+      --rpc-port                RPC Port (Default: 8545)
+      
+      --register, -r            Register node in non-interactive mode
+        --account-email         Account identification, also used in case of node/secret-key recovery
+                                It is possible to have multiple nodes under the same account-email
+        --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended.
 ```
 
 ## License
