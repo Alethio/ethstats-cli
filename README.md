@@ -52,7 +52,7 @@ $ ethstats-cli
 ```
 After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
 
-> It is highly recommended you use a process manager like [PM2]() or 
+> It is highly recommended you use a process manager like [PM2](http://pm2.keymetrics.io) or [Forever](https://github.com/foreverjs/forever) to keep `ethstats-cli` running at all times.
 
 #### Update `ethstats-cli` to the latest available version
 
