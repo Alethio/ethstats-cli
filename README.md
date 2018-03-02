@@ -3,7 +3,7 @@
 > EthStats.io CLI client.  
 >   
 >
-> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes.
+> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [ethstats.io](https://ethstats.io/network-statistics)
 
 # Contents
   - [Getting Started](#getting-started)
@@ -42,7 +42,7 @@ Parity
 
 ### Directly
 The app is configured by default to connect to an Ethereum client on the local machine.
-To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [Options](#options) 
+To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [Options](#options).
 
 #### Install `ethstats-cli` globally
 
@@ -84,7 +84,7 @@ yarn global upgrade ethstats-cli
 The following commands assume that the Ethereum client is either running locally or in docker with `--net host`.
 For other options you should check out [Options](#options).
 
-Make a directory to save your ethstats config files.
+Make a directory where your configuration files will be persisted.
 ```sh
 mkdir /opt/ethstats-cli
 ```
@@ -109,7 +109,7 @@ To update you just need to stop and remove the `ethstats` container and re-run t
 ```sh
 docker stop ethstats && docker rm ethstats
 ```
-then run it again
+then run it again.
 
 ## Troubleshooting
 Trouble free for now
