@@ -5,44 +5,71 @@
 >
 > This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes.
 
-## Requirements
-> Node.js >= 7.0 (https://nodejs.org/en/download/)  
-> NPM >= 5.0 (NPM is distributed with Node.js. For more infos see: https://www.npmjs.com/get-npm)
+# Contents
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installing and running](#installing-and-running)
+      - [Directly](#directly)
+      - [In Docker](#in-docker)
+  - [Troubleshooting](#troubleshooting)
+  - [Options](#options)
+  - [License](#license)
 
-## Installation
 
-The app needs to be installed on the same machine as the Ethereum node.
-> NPM
+# Getting started 
+
+## Prerequisites 
+Please make sure you have the following installed and running properly
+- [Node.js](https://nodejs.org/en/download/) >= 7.0  
+- NPM >= 5.0 (NPM is distributed with Node.js. For more infos see: https://www.npmjs.com/get-npm)
+- [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup)
+- JSON-RPC http api enabled and accessible on the Ethereum client of choice (Geth/Parity)
+
+## Installing and running
+
+### Directly
+The app is configured by default to connect to an Ethereum client on the local machine.
+To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [Options](#options) 
+
+#### Install `ethstats-cli` globally
+
+With [npm](https://www.npmjs.com):
 ```sh
-$ npm install -g ethstats-cli
+npm install -g ethstats-cli
 ```
 
-> Yarn
+Or [yarn](https://yarnpkg.com):
 ```sh
-$ yarn global add ethstats-cli
+yarn global add ethstats-cli
 ```
 
-## Update
 
-> NPM
+#### Running `ethstats-cli`
+On the first run of the app you will be asked a series of questions to setup your node. 
+Either follow the on screen instruction or see [Options](#options) for a non-interactive mode.
 ```sh
-$ npm install -g ethstats-cli@latest
+$ ethstats-cli
+```
+After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
+
+> It is highly recommended you use a process manager like [PM2]() or 
+
+#### Update `ethstats-cli` to the latest available version
+
+With [npm](https://www.npmjs.com):
+```sh
+npm install -g ethstats-cli@latest
 ```
 
-> Yarn
+Or [yarn](https://yarnpkg.com):
 ```sh
-$ yarn global upgrade ethstats-cli
+yarn global upgrade ethstats-cli
 ```
 
-## Usage
+### In Docker
 
-On the first run of the app, a node name must be provided.   
-Under that name the node will be visible on http://ethstats.net 
-```sh
-$ ethstats-cli <input>
-```
 
-## Shell options
+## Options
 
 ```sh
       --help, -h                Show help
