@@ -8,7 +8,7 @@
 # Contents
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-    - [Installing and running](#installing-and-running)
+    - [Installing and running](#setup)
       - [Directly](#directly)
       - [In Docker](#in-docker)
   - [Troubleshooting](#troubleshooting)
@@ -22,10 +22,23 @@
 Please make sure you have the following installed and running properly
 - [Node.js](https://nodejs.org/en/download/) >= 7.0  
 - NPM >= 5.0 (NPM is distributed with Node.js. For more infos see: https://www.npmjs.com/get-npm)
-- [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup)
+- [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup) running in one of the supported configurations **synced on the Ethereum main/foundation chain**
 - JSON-RPC http api enabled and accessible on the Ethereum client of choice (Geth/Parity)
 
-## Installing and running
+## Supported client configurations
+Geth
+- fast (`--syncmode "fast"`)
+- full (`--syncmode "full"`)
+- light (`--syncmode "light"`)
+> tested  1.8.1,
+
+Parity
+- fast (`--pruning fast`)
+- archive (`--pruning archive`)
+- with no ancient blocks (`--no-ancient-blocks`)
+> tested 1.7.11, 1.8.6, 1.8.7, 1.9.0, 1.9.1, 1.9.2, 1.10.0,
+
+## Setup
 
 ### Directly
 The app is configured by default to connect to an Ethereum client on the local machine.
@@ -42,7 +55,6 @@ Or [yarn](https://yarnpkg.com):
 ```sh
 yarn global add ethstats-cli
 ```
-
 
 #### Running `ethstats-cli`
 On the first run of the app you will be asked a series of questions to setup your node. 
@@ -68,6 +80,34 @@ yarn global upgrade ethstats-cli
 
 ### In Docker
 
+#### Installing and running
+The following commands assume that the Ethereum client is either running locally or in docker with `--net host`.
+For other options you should check out [Options](#options).
+
+Make a directory to save your ethstats config files.
+```sh
+mkdir /opt/ethstats-cli
+```
+
+```sh
+docker \
+run -d \
+--net host \
+--name ethstats \
+-v /opt/ethstats-cli/:/root/.config/configstore/ \
+node:latest \
+/bin/sh -c "yarn global add ethstats-cli && ethstats-cli -d -v -r --account-email your@email.com --node-name your_node_name"
+```
+
+If you already had a configuration file, the settings from that file will be used and the command line ignored. Delete the files in `/opt/ethstats-cli` to add a node with different settings.
+
+#### Updating
+To update you just need to stop and remove the `ethstats` container and re-run the above [docker command](#installing-and-running)
+
+```sh
+docker stop ethstats && docker rm ethstats
+```
+then run it again
 
 ## Options
 
