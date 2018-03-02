@@ -89,14 +89,16 @@ Make a directory to save your ethstats config files.
 mkdir /opt/ethstats-cli
 ```
 
+Then run the following command to run 
 ```sh
 docker \
 run -d \
+--restart always \
 --net host \
 --name ethstats \
 -v /opt/ethstats-cli/:/root/.config/configstore/ \
 node:latest \
-/bin/sh -c "yarn global add ethstats-cli && ethstats-cli -d -v -r --account-email your@email.com --node-name your_node_name"
+/bin/sh -c "yarn global add ethstats-cli && ethstats-cli -r --account-email your@email.com --node-name your_node_name"
 ```
 
 If you already had a configuration file, the settings from that file will be used and the command line ignored. Delete the files in `/opt/ethstats-cli` to add a node with different settings.
@@ -108,6 +110,9 @@ To update you just need to stop and remove the `ethstats` container and re-run t
 docker stop ethstats && docker rm ethstats
 ```
 then run it again
+
+## Troubleshooting
+Trouble free for now
 
 ## Options
 
