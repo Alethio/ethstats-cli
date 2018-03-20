@@ -122,8 +122,8 @@ Trouble free for now
       --debug, -d               Output values sent to server
       --verbose, -v             Output more detailed information
       
-      --server-host             Ethstats Host (Default: http://in.mainnet.ethstats.aleth.io)
-      --server-port             Ethstats Port (Default: 25384)
+      --server-host             Server Host
+      --server-port             Server Port
       --net, -n                 Specify Ethereum network your node is running on (Default: mainnet, Available: mainnet|ropsten|kovan|rinkeby)
                                 If --server-host or --server-port are specified, this option is ignored.
 
