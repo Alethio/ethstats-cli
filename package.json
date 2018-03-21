@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -44,6 +44,7 @@
     "sprintf-js": "1.1.1",
     "node-cleanup": "2.1.2",
     "lodash": "4.17.5",
+    "request": "2.85.0",
     "request-promise": "4.2.2"
   },
   "devDependencies": {
