@@ -13,7 +13,7 @@
     "bin": "./bin",
     "lib": "./lib"
   },
-  "main": "lib/index.js",
+  "main": "lib/app-cli.js",
   "bin": {
     "ethstats-cli": "./bin/ethstats-cli.js"
   },
@@ -45,7 +45,8 @@
     "node-cleanup": "2.1.2",
     "lodash": "4.17.5",
     "request": "2.85.0",
-    "request-promise": "4.2.2"
+    "request-promise": "4.2.2",
+    "pm2": "2.10.1"
   },
   "devDependencies": {
     "eslint": "^4.17.0",
