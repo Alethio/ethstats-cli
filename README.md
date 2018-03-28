@@ -127,7 +127,7 @@ $ ethstats-daemon
 ```
 
 If any CLI options are specified after the Daemon option, they will be forwarded to the forked process.
-The Daemon mode is implemented programmatically through the PM2 API. The API does not support the "startup" feature. To handle start on boot, check out the [PM2](#with-pm2) instructions
+The Daemon mode is implemented programmatically through the PM2 API. The API does not support the "startup" feature. To handle start on boot, check out the [PM2](#with-pm2) instructions.
 
 ### With PM2
 
