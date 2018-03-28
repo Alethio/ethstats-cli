@@ -137,7 +137,7 @@ For more control you can use directly [PM2](http://pm2.keymetrics.io). Here is a
 {
   "apps": [{
     "name": "ethstats-cli",
-    "script": "./ethstats-cli",
+    "script": "ethstats-cli",
     "pid": "~/.ethstats-cli/ethstats-cli.pid",
     "error": "~/.ethstats-cli/ethstats-cli.log",
     "output": "~/.ethstats-cli/ethstats-cli.log",
