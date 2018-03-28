@@ -8,11 +8,14 @@
 # Contents
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-    - [Installing and running](#setup)
-      - [Directly](#directly)
+    - [Install](#install)
+    - [Update](#update)
+    - [Running](#running)
+      - [CLI](#cli)
+      - [Daemon](#daemon)
+      - [With PM2](#with-pm2)
       - [In Docker](#in-docker)
   - [Troubleshooting](#troubleshooting)
-  - [Options](#options)
   - [License](#license)
 
 
@@ -38,13 +41,9 @@ Parity
 - with no ancient blocks (`--no-ancient-blocks`)
 > tested 1.7.11, 1.8.6, 1.8.7, 1.9.0, 1.9.1, 1.9.2, 1.10.0,
 
-## Setup
+## Install
 
-### Directly
-The app is configured by default to connect to an Ethereum client on the local machine.
-To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [Options](#options).
-
-#### Install `ethstats-cli` globally
+Install `ethstats-cli` globally
 
 With [npm](https://www.npmjs.com):
 ```sh
@@ -56,17 +55,9 @@ Or [yarn](https://yarnpkg.com):
 yarn global add ethstats-cli
 ```
 
-#### Running `ethstats-cli`
-On the first run of the app you will be asked a series of questions to setup your node. 
-Either follow the on screen instruction or see [Options](#options) for a non-interactive mode.
-```sh
-$ ethstats-cli
-```
-After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
+## Update 
 
-> It is highly recommended you use a process manager like [PM2](http://pm2.keymetrics.io) or [Forever](https://github.com/foreverjs/forever) to keep `ethstats-cli` running at all times.
-
-#### Update `ethstats-cli` to the latest available version
+Update `ethstats-cli` to the latest available version
 
 With [npm](https://www.npmjs.com):
 ```sh
@@ -78,11 +69,91 @@ Or [yarn](https://yarnpkg.com):
 yarn global upgrade ethstats-cli
 ```
 
+## Running
+On the first run of the app you will be asked a series of questions to setup your node. 
+Either follow the on screen instruction or see [CLI options](#cli-options) for a non-interactive mode.
+
+The app is configured by default to connect to an Ethereum client on the local machine.
+To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [CLI options](#cli-options).
+
+After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
+
+### CLI
+
+To run the app in interactive mode you can use the following command:
+
+```sh
+$ ethstats-cli
+```
+
+#### CLI options:
+
+```sh
+  --help, -h                Show help
+  --version, -V             Show version
+  --debug, -d               Output values sent to server
+  --verbose, -v             Output more detailed information
+      
+  --server-host             Server Host
+  --server-port             Server Port
+  --net, -n                 Specify Ethereum network your node is running on (Default: mainnet, Available: mainnet|ropsten|kovan|rinkeby)
+                            If --server-host or --server-port are specified, this option is ignored.
+
+  --rpc-host                RPC Host (Default: http://localhost)
+  --rpc-port                RPC Port (Default: 8545)
+      
+  --register, -r            Register node in non-interactive mode
+    --account-email         Account identification, also used in case of node/secret-key recovery
+                            It is possible to have multiple nodes under the same account-email
+    --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended.
+```
+
+### Daemon
+
+To keep the app running at all times, you can run it as a daemon using the following command:
+
+```sh
+$ ethstats-daemon
+```
+
+#### Daemon options:
+
+```sh
+  start               Start daemon
+  stop                Stop daemon
+  restart             Restart daemon. If it is already started, the process will be stopped first.
+  status              Show infos about the daemon.
+  kill                Ethstats daemon uses PM2 as a process manager. This command will kill PM2 god daemon.
+```
+
+If any CLI options are specified after the Daemon option, they will be forwarded to the forked process.
+The Daemon mode is implemented programmatically through the PM2 API. The API does not support the "startup" feature. To handle start on boot, check out the [PM2](#with-pm2) instructions.
+
+### With PM2
+
+For more control you can use directly [PM2](http://pm2.keymetrics.io). Here is a JSON format process file that we recommend:
+
+```json
+{
+  "apps": [{
+    "name": "ethstats-cli",
+    "script": "./ethstats-cli",
+    "pid": "~/.ethstats-cli/ethstats-cli.pid",
+    "error": "~/.ethstats-cli/ethstats-cli.log",
+    "output": "~/.ethstats-cli/ethstats-cli.log",
+    "args": "--verbose",
+    "restartDelay": 1000
+  }]
+}
+```
+
+To handle daemon start at boot time, please visit [PM2-Startup](http://pm2.keymetrics.io/docs/usage/startup/).
+
 ### In Docker
 
 #### Installing and running
 The following commands assume that the Ethereum client is either running locally or in docker with `--net host`.
-For other options you should check out [Options](#options).
+For other options you should check out [CLI options](#cli-options).
 
 Make a directory where your configuration files will be persisted.
 ```sh
@@ -113,28 +184,6 @@ then run it again.
 
 ## Troubleshooting
 Trouble free for now
-
-## Options
-
-```sh
-      --help, -h                Show help
-      --version, -V             Show version
-      --debug, -d               Output values sent to server
-      --verbose, -v             Output more detailed information
-      
-      --server-host             Server Host
-      --server-port             Server Port
-      --net, -n                 Specify Ethereum network your node is running on (Default: mainnet, Available: mainnet|ropsten|kovan|rinkeby)
-                                If --server-host or --server-port are specified, this option is ignored.
-
-      --rpc-host                RPC Host (Default: http://localhost)
-      --rpc-port                RPC Port (Default: 8545)
-      
-      --register, -r            Register node in non-interactive mode
-        --account-email         Account identification, also used in case of node/secret-key recovery
-                                It is possible to have multiple nodes under the same account-email
-        --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended.
-```
 
 ## License
 
