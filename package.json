@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -41,7 +41,7 @@
     "inquirer": "5.1.0",
     "meow": "4.0.0",
     "update-notifier": "2.3.0",
-    "web3": "0.19.0",
+    "web3": "0.20.6",
     "sprintf-js": "1.1.1",
     "node-cleanup": "2.1.2",
     "lodash": "4.17.5",
