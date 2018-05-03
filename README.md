@@ -100,7 +100,7 @@ $ ethstats-cli
 
   --client-url              Client URL (Must include protocol and port if any; Default: http://localhost:8545)
                             Based on the protocol specified in the url (http | ws) the app sets the corresponding  Web3 provider
-                            If --server-ipc-path is specified, this option is ignored
+                            If --client-ipc-path is specified, this option is ignored
   --client-ipc-path         Client IPC path
 
   --register, -r            Register node in non-interactive mode
