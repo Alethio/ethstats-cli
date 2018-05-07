@@ -74,7 +74,7 @@ On the first run of the app you will be asked a series of questions to setup you
 Either follow the on screen instruction or see [CLI options](#cli-options) for a non-interactive mode.
 
 The app is configured by default to connect to an Ethereum client on the local machine.
-To connect to a client running on another host see `--rpc-host` and `--rpc-port` under [CLI options](#cli-options).
+To connect to a client running on another host see `--clientUrl` under [CLI options](#cli-options).
 
 After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
 
@@ -93,19 +93,20 @@ $ ethstats-cli
   --version, -V             Show version
   --debug, -d               Output values sent to server
   --verbose, -v             Output more detailed information
-      
-  --server-host             Server Host
-  --server-port             Server Port
-  --net, -n                 Specify Ethereum network your node is running on (Default: mainnet, Available: mainnet|ropsten|kovan|rinkeby)
-                            If --server-host or --server-port are specified, this option is ignored.
 
-  --rpc-host                RPC Host (Default: http://localhost)
-  --rpc-port                RPC Port (Default: 8545)
-      
+  --server-url              Server URL (Must include protocol and port if any)
+  --net, -n                 Specify Ethereum network your node is running on (Default: mainnet)
+                            If --server-url is specified, this option is ignored
+
+  --client-url              Client URL (Must include protocol and port if any; Default: http://localhost:8545)
+                            Based on the protocol specified in the url (http | ws) the app sets the corresponding  Web3 provider
+                            If --client-ipc-path is specified, this option is ignored
+  --client-ipc-path         Client IPC path
+
   --register, -r            Register node in non-interactive mode
     --account-email         Account identification, also used in case of node/secret-key recovery
                             It is possible to have multiple nodes under the same account-email
-    --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended.
+    --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended
 ```
 
 ### Daemon
