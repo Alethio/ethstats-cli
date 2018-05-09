@@ -3,7 +3,7 @@
 > EthStats.io CLI client.  
 >   
 >
-> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [ethstats.io](https://ethstats.io/network-statistics)
+> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [ethstats.io](https://alpha.ethstats.io/)
 
 # Contents
   - [Getting Started](#getting-started)
@@ -76,7 +76,7 @@ Either follow the on screen instruction or see [CLI options](#cli-options) for a
 The app is configured by default to connect to an Ethereum client on the local machine.
 To connect to a client running on another host see `--clientUrl` under [CLI options](#cli-options).
 
-After the setup is done, your node will be visible on [ethstats.io](https://stage.ethstats.io/network-statistics)
+After the setup is done, your node will be visible on [ethstats.io](https://alpha.ethstats.io/)
 
 ### CLI
 
@@ -188,7 +188,7 @@ Trouble free for now
 
 ## License
 
-MIT © [cubedro]()
+MIT © [alethio]()
 
 [npm-image]: https://badge.fury.io/js/ethstats-cli.svg
 [npm-url]: https://npmjs.org/package/ethstats-cli
