@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.3.4] - 2018-05-16
+- Updated Readme file to include Troubleshooting, because the github repo is private.
+
 ## [2.3.3] - 2018-05-16
 - Updated Readme file.
 - Added Changelog file.

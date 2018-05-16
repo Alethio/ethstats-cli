@@ -15,8 +15,7 @@
       - [Daemon](#daemon)
       - [With PM2](#with-pm2)
       - [In Docker](#in-docker)
-  - [Troubleshooting](TROUBLESHOOTING.md)
-  - [Changelog](CHANGELOG.md)
+  - [Troubleshooting](#troubleshooting)
   - [License](#license)
 
 
@@ -53,13 +52,13 @@ With [npm](https://www.npmjs.com):
 ```sh
 npm install -g ethstats-cli
 ```
-If you encounter permissions issues at install time please see troubleshooting section: [NPM global package permissions problem](https://github.com/EthStats/client-node/blob/master/TROUBLESHOOTING.md#npm-global-package-permissions-problem)
+If you encounter permissions issues at install time please see troubleshooting section: [NPM global package permissions problem](#npm-global-package-permissions-problem)
 
 Or [yarn](https://yarnpkg.com):
 ```sh
 yarn global add ethstats-cli
 ```
-If after installing the package with yarn, the binaries are not found please see troubleshooting section: [Binaries not found](https://github.com/EthStats/client-node/blob/master/TROUBLESHOOTING.md#binaries-not-found)
+If after installing the package with yarn, the binaries are not found please see troubleshooting section: [Binaries not found](#binaries-not-found)
 
 ## Update 
 
@@ -188,6 +187,16 @@ To update you just need to stop and remove the `ethstats` container and re-run t
 docker stop ethstats && docker rm ethstats
 ```
 then run it again.
+
+## Troubleshooting
+#### NPM global package permissions problem
+We recommend installing NPM global packages **without** sudo. If you encountered issues when tried to install `ethstats-cli` as a global package with or without sudo regarding permissions, we recommend using this script [npm-global-no-sudo](https://github.com/baxy/npm-global-no-sudo) to fix the issue.
+
+#### Binaries not found
+If you installed `ethstats-cli` as a global package with Yarn and the binaries are not found, we recommend running the following command:
+```
+export PATH="$PATH:`yarn global bin`" && echo 'export PATH="$PATH:`yarn global bin`"' >> ~/.profile
+```
 
 ## License
 
