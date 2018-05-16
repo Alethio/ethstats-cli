@@ -15,7 +15,8 @@
       - [Daemon](#daemon)
       - [With PM2](#with-pm2)
       - [In Docker](#in-docker)
-  - [Troubleshooting](#troubleshooting)
+  - [Troubleshooting](TROUBLESHOOTING.md)
+  - [Changelog](CHANGELOG.md)
   - [License](#license)
 
 
@@ -23,10 +24,13 @@
 
 ## Prerequisites 
 Please make sure you have the following installed and running properly
-- [Node.js](https://nodejs.org/en/download/) >= 7.0  
-- NPM >= 5.0 (NPM is distributed with Node.js. For more infos see: https://www.npmjs.com/get-npm)
+- [Node.js](https://nodejs.org/en/download/) >= 8.11
+- [NPM](https://www.npmjs.com/get-npm) >= 5.6 (Usually NPM is distributed with Node.js)
+- Build Tools - To compile and install native addons from NPM you may also need to install tools like: make, gcc, g++. E.q. on ubuntu `build-essential` package has all the necessary tools.
+- [Yarn](https://yarnpkg.com) >= 1.5 Yarn is `optional`, being an alternative to NPM.
+- [Git](https://git-scm.com/downloads) - Some dependencies are downloaded through Git.
 - [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup) running in one of the supported configurations **synced on the Ethereum main/foundation chain**
-- JSON-RPC http api enabled and accessible on the Ethereum client of choice (Geth/Parity)
+- JSON-RPC http or websockets or ipc apis enabled and accessible on the Ethereum client of choice (Geth/Parity)
 
 ## Supported client configurations
 Geth
@@ -49,11 +53,13 @@ With [npm](https://www.npmjs.com):
 ```sh
 npm install -g ethstats-cli
 ```
+If you encounter permissions issues at install time please see troubleshooting section: [NPM global package permissions problem](https://github.com/EthStats/client-node/blob/master/TROUBLESHOOTING.md#npm-global-package-permissions-problem)
 
 Or [yarn](https://yarnpkg.com):
 ```sh
 yarn global add ethstats-cli
 ```
+If after installing the package with yarn, the binaries are not found please see troubleshooting section: [Binaries not found](https://github.com/EthStats/client-node/blob/master/TROUBLESHOOTING.md#binaries-not-found)
 
 ## Update 
 
@@ -183,12 +189,9 @@ docker stop ethstats && docker rm ethstats
 ```
 then run it again.
 
-## Troubleshooting
-Trouble free for now
-
 ## License
 
-MIT © [alethio]()
+MIT &copy; [alethio](https://aleth.io)
 
 [npm-image]: https://badge.fury.io/js/ethstats-cli.svg
 [npm-url]: https://npmjs.org/package/ethstats-cli
