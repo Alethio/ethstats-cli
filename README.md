@@ -108,6 +108,8 @@ $ ethstats-cli
                             If --client-ipc-path is specified, this option is ignored
   --client-ipc-path         Client IPC path
 
+  --configurator-url        Configurator URL (Must include protocol and port if any). Custom configuration service to provide application specific configs.
+
   --register, -r            Register node in non-interactive mode
     --account-email         Account identification, also used in case of node/secret-key recovery
                             It is possible to have multiple nodes under the same account-email
