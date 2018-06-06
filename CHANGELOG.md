@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.3.6] - 2018-06-XX
+## [2.3.6] - 2018-06-07
 - Improvements on the chain detection mechanism
 - Bug fixes
 
