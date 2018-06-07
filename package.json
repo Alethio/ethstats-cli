@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -50,7 +50,8 @@
     "request": "2.85.0",
     "request-promise": "4.2.2",
     "pm2": "2.10.1",
-    "moment": "2.21.0"
+    "moment": "2.21.0",
+    "find-process": "1.1.1"
   },
   "devDependencies": {
     "eslint": "^4.17.0",

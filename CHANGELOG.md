@@ -1,9 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.3.7] - 2018-06-07
+- Ensure the app is running only one instance.
+
 ## [2.3.6] - 2018-06-07
-- Improvements on the chain detection mechanism
-- Bug fixes
+- Improvements on the chain detection mechanism.
+- Bug fixes.
 
 ## [2.3.5] - 2018-05-21
 - Added "--configurator-url" for custom configuration service, that provides application specific configs.
