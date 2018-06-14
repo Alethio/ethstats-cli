@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.3.10] - 2018-06-14
+- Improved WS communication mechanism with the server.
+
 ## [2.3.9] - 2018-06-07
 - Fixed bug when ensuring the app is running only one instance inside docker container.
 
