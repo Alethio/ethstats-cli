@@ -29,9 +29,9 @@ Please make sure you have the following installed and running properly
 - [Yarn](https://yarnpkg.com) >= 1.5 Yarn is `optional`, being an alternative to NPM.
 - [Git](https://git-scm.com/downloads) - Some dependencies are downloaded through Git.
 - [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup) running in one of the supported configurations **synced on the Ethereum main/foundation chain**
-- JSON-RPC http or websockets or ipc apis enabled and accessible on the Ethereum client of choice (Geth/Parity)
+- JSON-RPC http or websockets or ipc APIs enabled and accessible on the Ethereum node of choice (Geth/Parity)
 
-## Supported client configurations
+## Supported node configurations
 Geth
 - fast (`--syncmode "fast"`)
 - full (`--syncmode "full"`)
@@ -75,11 +75,11 @@ yarn global upgrade ethstats-cli
 ```
 
 ## Running
-On the first run of the app you will be asked a series of questions to setup your node. 
-Either follow the on screen instruction or see [CLI options](#cli-options) for a non-interactive mode.
+On the first run of the app you will be asked a series of questions to setup your node.
+Either follow the on screen instructions or see [CLI options](#cli-options) for a non-interactive mode.
 
-The app is configured by default to connect to an Ethereum client on the local machine.
-To connect to a client running on another host see `--clientUrl` under [CLI options](#cli-options).
+The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545) that is running on the `mainnet` network.
+To connect to a node running on another host see `--clientUrl` under [CLI options](#cli-options).
 
 After the setup is done, your node will be visible on [ethstats.io](https://alpha.ethstats.io/)
 
@@ -115,6 +115,19 @@ $ ethstats-cli
                             It is possible to have multiple nodes under the same account-email
     --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended
 ```
+
+Running the app in non-interactive mode for the first time, you'll need to specify the `--register` option together with `--account-email` and `--node-name`.
+Like this no questions will be asked. All other CLI options have default values.
+
+Example:
+```sh
+$ ethstats-cli --register --account-email your@email.com --node-name your_node_name
+```
+
+If the app is already registered and you still specify the registration CLI option like in the example command above, they will be avoided.
+
+If the node was successfully registered, a configuration file is created to persist the values of the CLI options previously specified.
+Every CLI option that passes a value, once specified, it's value is stored in this configuration file, so the next time the app is started there's no need to specify does CLI options again.
 
 ### Daemon
 
@@ -160,7 +173,7 @@ To handle daemon start at boot time, please visit [PM2-Startup](http://pm2.keyme
 ### In Docker
 
 #### Installing and running
-The following commands assume that the Ethereum client is either running locally or in docker with `--net host`.
+The following commands assume that the Ethereum node is either running locally or in docker with `--net host`.
 For other options you should check out [CLI options](#cli-options).
 
 Make a directory where your configuration files will be persisted.
@@ -168,26 +181,51 @@ Make a directory where your configuration files will be persisted.
 mkdir /opt/ethstats-cli
 ```
 
-Then run the following command to run 
+Then run the following command to run from `alethio/ethstats-cli` docker image:
+```sh
+docker run -d \
+--restart always \
+--net host \
+-v /opt/ethstats-cli/:/root/.config/configstore/ \
+alethio/ethstats-cli --register --account-email your@email.com --node-name your_node_name
+```
+
+or from `node:latest` docker image:
+
 ```sh
 docker \
 run -d \
+--name ethstats-cli \
 --restart always \
 --net host \
---name ethstats \
 -v /opt/ethstats-cli/:/root/.config/configstore/ \
 node:latest \
-/bin/sh -c "yarn global add ethstats-cli && ethstats-cli -r --account-email your@email.com --node-name your_node_name"
+/bin/sh -c "yarn global add ethstats-cli && ethstats-cli --register --account-email your@email.com --node-name your_node_name"
 ```
+
+The docker commands are run with `-d`, that means `ethstats-cli` is started in non-interactive mode.
+
+To run in interactive mode change `-d` to `-it` and remove the `--register` option along with `--account-email` and `--node-name`.
 
 If you already had a configuration file, the settings from that file will be used and the command line ignored. Delete the files in `/opt/ethstats-cli` to add a node with different settings.
 
 #### Updating
-To update you just need to stop and remove the `ethstats` container and re-run the above [docker command](#installing-and-running)
+
+If you started from `alethio/ehtstats-cli` docker image:
 
 ```sh
-docker stop ethstats && docker rm ethstats
+docker pull alethio/ethstats-cli
+docker stop ethstats-cli && docker rm ethstats-cli
 ```
+
+then run it again.
+
+If you started from `node/latest` docker image, just stop and remove the `ethstats-cli`:
+
+```sh
+docker stop ethstats-cli && docker rm ethstats-cli
+```
+
 then run it again.
 
 ## Troubleshooting

@@ -1,19 +1,14 @@
-FROM node:alpine
+FROM node:latest
 
-# Using this node verision because `process.versions.modules` is 51, which
-# matches the prebuilt `uws` binaries
+WORKDIR /ethstats-cli
 
-RUN apk update && \
-    apk add git # libc6-compat
+COPY package.json package-lock.json .babelrc ./
 
-WORKDIR /app
-COPY package.json package-lock.json ./
-COPY .babelrc ./
-
+RUN npm install -g gulp
 RUN npm install
 
 COPY . .
 
-CMD ["node", "./bin/ethstats-cli.js"]
+RUN gulp prepare
 
-
+ENTRYPOINT ["./bin/ethstats-cli.js", "-vd"]
