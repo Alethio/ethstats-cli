@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.3.11] - 2018-06-14
+## [2.3.11] - 2018-06-22
 - Automatically build docker image to `hub.docker.com/r/alethio/ethstats-cli`
 
 ## [2.3.10] - 2018-06-14
