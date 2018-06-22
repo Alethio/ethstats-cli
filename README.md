@@ -244,9 +244,9 @@ MIT &copy; [alethio](https://aleth.io)
 
 [npm-image]: https://badge.fury.io/js/ethstats-cli.svg
 [npm-url]: https://npmjs.org/package/ethstats-cli
-[travis-image]: https://travis-ci.org/EthStats/client-node.svg?branch=master
-[travis-url]: https://travis-ci.org/EthStats/client-node
-[daviddm-image]: https://david-dm.org/EthStats/client-node.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/EthStats/client-node
-[coveralls-image]: https://coveralls.io/repos/EthStats/client-node/badge.svg
-[coveralls-url]: https://coveralls.io/r/EthStats/client-node
+[travis-image]: https://travis-ci.org/EthStats/ethstats-cli.svg?branch=master
+[travis-url]: https://travis-ci.org/EthStats/ethstats-cli
+[daviddm-image]: https://david-dm.org/EthStats/ethstats-cli.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/EthStats/ethstats-cli
+[coveralls-image]: https://coveralls.io/repos/EthStats/ethstats-cli/badge.svg
+[coveralls-url]: https://coveralls.io/r/EthStats/ethstats-cli
