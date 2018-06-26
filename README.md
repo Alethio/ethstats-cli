@@ -79,9 +79,11 @@ On the first run of the app you will be asked a series of questions to setup you
 Either follow the on screen instructions or see [CLI options](#cli-options) for a non-interactive mode.
 
 The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545) that is running on the `mainnet` network.
-To connect to a node running on another host see `--clientUrl` under [CLI options](#cli-options).
+To connect to a node running on another host see `--client-url` under [CLI options](#cli-options).
 
 After the setup is done, your node will be visible on [ethstats.io](https://alpha.ethstats.io/)
+
+IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
 
 ### CLI
 
