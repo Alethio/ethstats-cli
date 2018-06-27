@@ -2,7 +2,7 @@
   "name": "ethstats-cli",
   "version": "2.4.0",
   "description": "EthStats CLI client",
-  "homepage": "https://github.com/EthStats/client-node",
+  "homepage": "https://github.com/EthStats/ethstats-cli",
   "author": {
     "name": "Marian Oancea",
     "email": "contact@siteshop.ro",
@@ -87,8 +87,8 @@
     "test": "gulp"
   },
   "license": "MIT",
-  "repository": "git@github.com:EthStats/client-node.git",
+  "repository": "git@github.com:EthStats/ethstats-cli.git",
   "bugs": {
-    "url": "https://github.com/EthStats/client-node/issues"
+    "url": "https://github.com/EthStats/ethstats-cli/issues"
   }
 }
