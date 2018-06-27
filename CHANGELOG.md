@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.1] - 2018-06-27
+- Bug fix on require 'babel-polyfill' module
+
 ## [2.4.0] - 2018-06-27
 - On login send CPU, memory and disk information
 - Every 5 seconds collect and send usage information
