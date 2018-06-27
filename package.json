@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.3.11",
+  "version": "2.4.0",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/client-node",
   "author": {
@@ -51,12 +51,14 @@
     "request-promise": "4.2.2",
     "pm2": "2.10.1",
     "moment": "2.21.0",
-    "find-process": "1.1.1"
+    "find-process": "1.1.1",
+    "systeminformation": "3.42.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "babel-polyfill": "^6.26.0",
     "eslint": "^4.17.0",
     "eslint-config-xo-space": "^0.17.0",
-    "babel-eslint": "^8.2.1",
     "eslint-plugin-babel": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.2",
