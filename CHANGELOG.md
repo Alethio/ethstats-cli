@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.2] - 2018-08-23
+- Improved logging Errors and Warnings
+- Added history request for light mode server with no persistence
+
 ## [2.4.1] - 2018-06-27
 - Bug fix on require 'babel-polyfill' module
 
