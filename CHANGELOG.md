@@ -1,8 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.4.3] - 2018-08-23
+## [2.4.3] - 2018-08-30
 - Backwards compatibility with v.1 clients
+- Updated dependencies to latest versions
 
 ## [2.4.2] - 2018-08-23
 - Improved logging Errors and Warnings

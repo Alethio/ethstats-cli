@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["xo-space"],
+  "plugins": [
+    "babel"
+  ],
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "no-warning-comments": 0
+  }
+}
