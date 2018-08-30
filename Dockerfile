@@ -4,7 +4,7 @@ WORKDIR /ethstats-cli
 
 COPY package.json package-lock.json .babelrc ./
 
-RUN npm install -g gulp
+RUN npm install -g gulp-cli
 RUN npm install
 
 COPY . .
