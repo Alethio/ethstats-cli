@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.4.5] - 2018-08-30
+## [2.4.6] - 2018-08-30
 - Backwards compatibility with v.1 clients
 - Updated dependencies to latest versions
 - Fixed eslint problems

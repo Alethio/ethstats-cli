@@ -1,13 +1,20 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "description": "EthStats CLI client",
   "homepage": "https://github.com/EthStats/ethstats-cli",
   "author": {
     "name": "Marian Oancea",
-    "email": "contact@siteshop.ro",
+    "email": "marian.oancea@consensys.net",
     "url": "https://github.com/cubedro"
   },
+  "contributors": [
+    {
+      "name": "Adrian Sabau",
+      "email": "adrian.sabau@consensys.net",
+      "url": "https://github.com/baxy"
+    }
+  ],
   "preferGlobal": true,
   "directories": {
     "bin": "./bin",
@@ -27,9 +34,6 @@
     "web3"
   ],
   "dependencies": {
-    "@babel/core": "7.0.0",
-    "@babel/preset-env": "7.0.0",
-    "@babel/register": "7.0.0",
     "@babel/polyfill": "7.0.0",
     "async": "2.6.1",
     "boxen": "1.3.0",
@@ -56,6 +60,9 @@
     "ajv": "6.5.3"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "@babel/register": "7.0.0",
     "eslint": "5.4.0",
     "eslint-config-xo-space": "0.20.0",
     "babel-eslint": "9.0.0",
