@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.7] - 2018-11-20
+- Dependency packages update
+
 ## [2.4.6] - 2018-08-30
 - Backwards compatibility with v.1 clients
 - Updated dependencies to latest versions
