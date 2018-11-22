@@ -1,8 +1,8 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.8",
+  "version": "2.4.9",
   "description": "EthStats CLI client",
-  "homepage": "https://github.com/EthStats/ethstats-cli",
+  "homepage": "https://github.com/alethio/ethstats-cli",
   "author": {
     "name": "Marian Oancea",
     "email": "marian.oancea@consensys.net",
@@ -26,9 +26,13 @@
     "ethstats-daemon": "./bin/ethstats-daemon.js"
   },
   "keywords": [
+    "alethio",
     "ethstats",
     "blockchain",
     "explorer",
+    "netstats",
+    "network",
+    "statistics",
     "ethereum",
     "dashboard",
     "web3"
@@ -46,7 +50,7 @@
     "inquirer": "6.2.0",
     "meow": "5.0.0",
     "update-notifier": "2.5.0",
-    "web3js-rpc": "1.0.2",
+    "web3-0.x-wrapper": "1.0.0",
     "web3": "1.0.0-beta.36",
     "sprintf-js": "1.1.1",
     "node-cleanup": "2.1.2",
@@ -80,8 +84,8 @@
     "prepare": "gulp prepare"
   },
   "license": "MIT",
-  "repository": "git@github.com:EthStats/ethstats-cli.git",
+  "repository": "git@github.com:alethio/ethstats-cli.git",
   "bugs": {
-    "url": "https://github.com/EthStats/ethstats-cli/issues"
+    "url": "https://github.com/alethio/ethstats-cli/issues"
   }
 }
