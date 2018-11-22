@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.8] - 2018-11-22
+- Updated README file
+- Updated issue template files
+
 ## [2.4.7] - 2018-11-20
 - Dependency packages update
 
