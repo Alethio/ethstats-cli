@@ -1,7 +1,7 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.9",
-  "description": "EthStats CLI client",
+  "version": "2.4.10",
+  "description": "EthStats Network CLI client",
   "homepage": "https://github.com/alethio/ethstats-cli",
   "author": {
     "name": "Marian Oancea",
