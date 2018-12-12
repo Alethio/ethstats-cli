@@ -1,9 +1,9 @@
 # ethstats-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> EthStats.io CLI client.  
+> EthStats Network CLI client.  
 >   
 >
-> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [ethstats.io](https://alpha.ethstats.io/)
+> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [net.ethstats.io](https://net.ethstats.io/)
 
 # Contents
   - [Getting Started](#getting-started)
@@ -81,7 +81,7 @@ Either follow the on screen instructions or see [CLI options](#cli-options) for 
 The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545) that is running on the `mainnet` network.
 To connect to a node running on another host see `--client-url` under [CLI options](#cli-options).
 
-After the setup is done, your node will be visible on [net.ethereum.ethstats.io](https://net.ethereum.ethstats.io/)
+After the setup is done, your node will be visible on [net.ethstats.io](https://net.ethstats.io/)
 
 IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
 
