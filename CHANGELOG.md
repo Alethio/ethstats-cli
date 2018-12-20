@@ -1,10 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.11] - 2018-12-20
+- Fixed basic auth when Web3 HttpProvider is used
+
 ## [2.4.10] - 2018-12-12
 - Added privacy policy on register
 - Bug fix - reinit web3 provider when no new blocks received for more then 1 hour
-- Updated README file 
+- Updated README file
 
 ## [2.4.9] - 2018-11-22
 - Updated package.json
