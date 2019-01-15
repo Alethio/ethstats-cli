@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.12] - 2019-01-15
+- Added CircleCI workflow to trigger docker hub build sequentially
+- Updated Dockerfile to use node:alpine for smaller image size
+
 ## [2.4.11] - 2018-12-20
 - Fixed basic auth when Web3 HttpProvider is used
 
