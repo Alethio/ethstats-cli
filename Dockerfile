@@ -1,14 +1,16 @@
-FROM node:latest
+FROM node:alpine
+
+RUN apk update && \
+    apk add --no-cache git python g++ make procps
 
 WORKDIR /ethstats-cli
 
 COPY package.json package-lock.json .babelrc ./
 
-RUN npm install -g gulp-cli
 RUN npm install
 
 COPY . .
 
-RUN gulp prepare
+RUN npm run gulp prepare
 
 ENTRYPOINT ["./bin/ethstats-cli.js", "-vd"]
