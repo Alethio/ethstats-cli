@@ -10,7 +10,7 @@ const coveralls = require('gulp-coveralls');
 // Initialize the babel transpiler so ES2015 files gets compiled when they're loaded
 require('@babel/register');
 
-gulp.task('static', function () {
+gulp.task('lint', function () {
   return gulp.src('**/*.js')
     .pipe(plumber())
     .pipe(excludeGitignore())
@@ -32,13 +32,13 @@ gulp.task('clean', function () {
   return del('dist');
 });
 
-gulp.task('babel', gulp.series('clean', function () {
+gulp.task('babel', () => {
   return gulp.src('lib/**/*.js')
     .pipe(plumber())
     .pipe(babel())
     .pipe(gulp.dest('dist'));
-}));
+});
 
-gulp.task('prepare', gulp.series('babel'));
+gulp.task('prepare', gulp.series('clean', 'babel'));
 
-gulp.task('default', gulp.series('static', 'coveralls'));
+gulp.task('default', gulp.series('lint', 'coveralls'));

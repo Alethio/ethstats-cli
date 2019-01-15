@@ -1,7 +1,7 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.11",
-  "description": "EthStats Network CLI client",
+  "version": "2.4.12",
+  "description": "EthStats - Network Monitor - CLI Client (net.ethstats.io)",
   "homepage": "https://github.com/alethio/ethstats-cli",
   "author": {
     "name": "Marian Oancea",

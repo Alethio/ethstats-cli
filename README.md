@@ -1,9 +1,9 @@
 # ethstats-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> EthStats Network CLI client.  
+> EthStats - Network Monitor - CLI Client 
 >   
 >
-> This app connects to your Ethereum node through RPC and extract data that will be sent to the ethstats server for analytics purposes. Stats are displayed on [net.ethstats.io](https://net.ethstats.io/)
+> The client application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes. Stats are displayed on [net.ethstats.io](https://net.ethstats.io/)
 
 # Contents
   - [Getting Started](#getting-started)
