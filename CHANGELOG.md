@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.13] - 2019-01-19
+- Fixed websocket bug when reconnecting to the ethstats network server
+
 ## [2.4.12] - 2019-01-15
 - Added CircleCI workflow to trigger docker hub build sequentially
 - Updated Dockerfile to use node:alpine for smaller image size
@@ -60,7 +63,7 @@ All notable changes to this project will be documented in this file.
 - Fixed bug when ensuring the app is running only one instance inside docker container.
 
 ## [2.3.8] - 2018-06-07
-- Added dbeug infos
+- Added debug infos
 
 ## [2.3.7] - 2018-06-07
 - Ensure the app is running only one instance.
