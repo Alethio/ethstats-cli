@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.14] - 2019-02-12
+- Reconnect to server improvements
+- Reinit web3 improvements when no new block received
+- Updated dependencies to latest versions
+
 ## [2.4.13] - 2019-01-19
 - Fixed websocket bug when reconnecting to the ethstats network server
 
