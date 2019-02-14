@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.16] - 2019-02-14
+- Fixed web3 WebSocketProvider connection issue
+
 ## [2.4.14] - 2019-02-12
 - Reconnect to server improvements
 - Reinit web3 improvements when no new block received
