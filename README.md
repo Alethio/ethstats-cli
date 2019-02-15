@@ -84,7 +84,7 @@ yarn global upgrade ethstats-cli
 On the first run the app will start in interactive mode and you will be asked a series of questions to setup your node.
 Either follow the on screen instructions or see [CLI options](#cli-options) for a non-interactive mode.
 
-The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545) that is running on the `mainnet` network.
+The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545).
 To connect to a node running on another host see `--client-url` under [CLI options](#cli-options).
 
 After the setup is done, your node will be visible on [net.ethstats.io](https://net.ethstats.io/)
