@@ -3,7 +3,13 @@
 > EthStats - Network Monitor - CLI Client 
 >   
 >
-> The client application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes. Stats are displayed on [net.ethstats.io](https://net.ethstats.io/)
+> The client application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes.  
+
+# Live deployments
+See active nodes or add your own on the following running deployments of the EthStats Network Monitor 
+
+[Mainnet](https://net.ethstats.io/)  
+[Görli Testnet](https://net.goerli.ethstats.io/)
 
 # Contents
   - [Getting Started](#getting-started)
@@ -75,7 +81,7 @@ yarn global upgrade ethstats-cli
 ```
 
 ## Running
-On the first run of the app you will be asked a series of questions to setup your node.
+On the first run the app will start in interactive mode and you will be asked a series of questions to setup your node.
 Either follow the on screen instructions or see [CLI options](#cli-options) for a non-interactive mode.
 
 The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545) that is running on the `mainnet` network.
