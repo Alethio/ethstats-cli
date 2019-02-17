@@ -3,13 +3,16 @@
 > EthStats - Network Monitor - CLI Client 
 >   
 >
-> The client application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes.  
+> The application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes.  
 
 # Live deployments
 See active nodes or add your own on the following running deployments of the EthStats Network Monitor 
 
-[Mainnet](https://net.ethstats.io/)  
-[Görli Testnet](https://net.goerli.ethstats.io/)
+ - Mainnet - [net.ethstats.io](https://net.ethstats.io/)  
+ - Görli Testnet - [net.goerli.ethstats.io](https://net.goerli.ethstats.io/)
+
+# Supported Ethereum nodes
+Geth, Parity, Pantheon, basically any Ethereum node that has RPC enabled.
 
 # Contents
   - [Getting Started](#getting-started)
@@ -17,10 +20,11 @@ See active nodes or add your own on the following running deployments of the Eth
     - [Install](#install)
     - [Update](#update)
     - [Running](#running)
-      - [CLI](#cli)
-      - [Daemon](#daemon)
-      - [With PM2](#with-pm2)
-      - [In Docker](#in-docker)
+    - [Register node](#register-node)
+    - [Config file](#config-file)
+  - [CLI Options](#cli-options)
+  - [Daemon](#daemon)
+  - [Docker](#docker)
   - [Troubleshooting](https://github.com/Alethio/ethstats-cli/blob/master/TROUBLESHOOTING.md)
   - [Changelog](https://github.com/Alethio/ethstats-cli/blob/master/CHANGELOG.md)
   - [License](https://github.com/Alethio/ethstats-cli/blob/master/LICENSE)
@@ -37,18 +41,6 @@ Please make sure you have the following installed and running properly
 - [Geth](https://geth.ethereum.org/install/) or [Parity](https://wiki.parity.io/Setup) running in one of the supported configurations **synced on the Ethereum main/foundation chain**
 - JSON-RPC http or websockets or ipc APIs enabled and accessible on the Ethereum node of choice (Geth/Parity)
 
-## Supported node configurations
-Geth
-- fast (`--syncmode "fast"`)
-- full (`--syncmode "full"`)
-- light (`--syncmode "light"`)
-> tested  1.8.1,
-
-Parity
-- fast (`--pruning fast`)
-- archive (`--pruning archive`)
-- with no ancient blocks (`--no-ancient-blocks`)
-> tested 1.7.11, 1.8.6, 1.8.7, 1.9.0, 1.9.1, 1.9.2, 1.10.0,
 
 ## Install
 
@@ -81,25 +73,42 @@ yarn global upgrade ethstats-cli
 ```
 
 ## Running
-On the first run the app will start in interactive mode and you will be asked a series of questions to setup your node.
-Either follow the on screen instructions or see [CLI options](#cli-options) for a non-interactive mode.
-
-The app is configured by default to connect to an Ethereum node on the local machine (http://localhost:8545).
-To connect to a node running on another host see `--client-url` under [CLI options](#cli-options).
-
-After the setup is done, your node will be visible on [net.ethstats.io](https://net.ethstats.io/)
-
-IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
-
-### CLI
-
-To run the app in interactive mode you can use the following command:
-
+To run the app use the following command:
 ```sh
 $ ethstats-cli
 ```
+The app is configured by default to connect to the Ethereum node on your local host (http://localhost:8545).
+To connect to a node running on different host see `--client-url` under [CLI Options](#cli-options).
 
-#### CLI options:
+IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
+
+## Register node
+
+On the first run of the app the first thing it does is to register the Ethereum node in our platform. For this you will be asked about the network the node is running on, email address and node name.
+
+It is possible to register the node also in non interactive mode without asking the necessary infos by specifying the `--register` option like in the example bellow:
+```sh
+$ ethstats-cli --register --account-email your@email.com --node-name your_node_name
+```
+
+For more details on these options please see [CLI Options](#cli-options). 
+
+If the node is already registered and you still specify the `--register` option, it will be avoided. A new registration is possible if the [config file](#config-file) is deleted. 
+
+## Config file
+After the node was successfully registered, a config file is created in the following location: 
+```sh
+~/.config/configstore/ethstats-cli.json
+```  
+
+It persists the node name and the secret key received on successfully registration and the values of the following CLI options:
+  - `--configurator-url`
+  - `--server-url`
+  - `--client-url`
+  - `--client-ipc-path`
+  - `--network`
+
+# CLI Options:
 
 ```sh
   --help, -h                Show help
@@ -109,6 +118,7 @@ $ ethstats-cli
 
   --server-url              Server URL (Must include protocol and port if any)
   --net, -n                 Specify Ethereum network your node is running on (Default: mainnet)
+                            Available networks: mainnet|goerli
                             If --server-url is specified, this option is ignored
 
   --client-url              Client URL (Must include protocol and port if any; Default: http://localhost:8545)
@@ -124,20 +134,7 @@ $ ethstats-cli
     --node-name             Name of the node. If node is already registered, a unique 5 char hash will be appended
 ```
 
-Running the app in non-interactive mode for the first time, you'll need to specify the `--register` option together with `--account-email` and `--node-name`.
-Like this no questions will be asked. All other CLI options have default values.
-
-Example:
-```sh
-$ ethstats-cli --register --account-email your@email.com --node-name your_node_name
-```
-
-If the app is already registered and you still specify the registration CLI option like in the example command above, they will be avoided.
-
-If the node was successfully registered, a configuration file is created to persist the values of the CLI options previously specified.
-Every CLI option that passes a value, once specified, it's value is stored in this configuration file, so the next time the app is started there's no need to specify does CLI options again.
-
-### Daemon
+# Daemon
 
 To keep the app running at all times, you can run it as a daemon using the following command:
 
@@ -145,7 +142,7 @@ To keep the app running at all times, you can run it as a daemon using the follo
 $ ethstats-daemon
 ```
 
-#### Daemon options:
+## Daemon options:
 
 ```sh
   start               Start daemon
@@ -158,7 +155,7 @@ $ ethstats-daemon
 If any CLI options are specified after the Daemon option, they will be forwarded to the forked process.
 The Daemon mode is implemented programmatically through the PM2 API. The API does not support the "startup" feature. To handle start on boot, check out the [PM2](#with-pm2) instructions.
 
-### With PM2
+## PM2
 
 For more control you can use directly [PM2](http://pm2.keymetrics.io). Here is a JSON format process file that we recommend:
 
@@ -178,9 +175,9 @@ For more control you can use directly [PM2](http://pm2.keymetrics.io). Here is a
 
 To handle daemon start at boot time, please visit [PM2-Startup](http://pm2.keymetrics.io/docs/usage/startup/).
 
-### In Docker
+# Docker
 
-#### Installing and running
+## Installing and running
 The following commands assume that the Ethereum node is either running locally or in docker with `--net host`.
 For other options you should check out [CLI options](#cli-options).
 
@@ -211,13 +208,7 @@ node:latest \
 /bin/sh -c "yarn global add ethstats-cli && ethstats-cli --register --account-email your@email.com --node-name your_node_name"
 ```
 
-The docker commands are run with `-d`, that means `ethstats-cli` is started in non-interactive mode.
-
-To run in interactive mode change `-d` to `-it` and remove the `--register` option along with `--account-email` and `--node-name`.
-
-If you already had a configuration file, the settings from that file will be used and the command line ignored. Delete the files in `/opt/ethstats-cli` to add a node with different settings.
-
-#### Updating
+## Updating
 
 If you started from `alethio/ehtstats-cli` docker image:
 
@@ -228,7 +219,7 @@ docker stop ethstats-cli && docker rm ethstats-cli
 
 then run it again.
 
-If you started from `node/latest` docker image, just stop and remove the `ethstats-cli`:
+If you started from `node:latest` docker image, just stop and remove the `ethstats-cli` container:
 
 ```sh
 docker stop ethstats-cli && docker rm ethstats-cli
