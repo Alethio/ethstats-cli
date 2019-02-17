@@ -78,7 +78,7 @@ To run the app use the following command:
 $ ethstats-cli
 ```
 The app is configured by default to connect to the Ethereum node on your local host (http://localhost:8545).
-To connect to a node running on different host see `--client-url` under [CLI Options](#cli-options).
+To connect to a node running on a different host see `--client-url` under [CLI Options](#cli-options).
 
 IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
 
@@ -101,7 +101,7 @@ After the node was successfully registered, a config file is created in the foll
 ~/.config/configstore/ethstats-cli.json
 ```  
 
-It persists the node name and the secret key received on successfully registration and the values of the following CLI options:
+It persists the node name, the secret key received on successfully registration and the values of the following CLI options:
   - `--configurator-url`
   - `--server-url`
   - `--client-url`
