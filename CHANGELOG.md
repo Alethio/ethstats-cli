@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.17] - 2019-02-17
+- Fixed server reconnection bug
+- Updated Readme file
+
 ## [2.4.16] - 2019-02-14
 - Fixed web3 WebSocketProvider connection issue
 
