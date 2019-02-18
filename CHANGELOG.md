@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.18] - 2019-02-18
+- Show correct dashboard url when app starts
+
 ## [2.4.17] - 2019-02-17
 - Fixed server reconnection bug
 - Updated Readme file
