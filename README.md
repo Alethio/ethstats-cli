@@ -22,6 +22,7 @@ Geth, Parity, Pantheon, basically any Ethereum node that has RPC enabled.
     - [Running](#running)
     - [Register node](#register-node)
     - [Config file](#config-file)
+    - [Node recovery](#node-recovery)
   - [CLI Options](#cli-options)
   - [Daemon](#daemon)
   - [Docker](#docker)
@@ -80,6 +81,10 @@ $ ethstats-cli
 The app is configured by default to connect to the Ethereum node on your local host (http://localhost:8545).
 To connect to a node running on a different host see `--client-url` under [CLI Options](#cli-options).
 
+The server that is connecting to by default is the one deployed for the Ethereum `mainnet`. For sending stats for a different network see the `--net` flag under [CLI Options](#cli-options).
+Changing the network requires a new registration of the node. This is required because based on the network you specify at registration time the stats will be sent to a different server. Each server has its own nodes/secretKeys.
+A new registration is possible if the [config file](#config-file) is deleted.
+
 IMPORTANT: To be able to extract all statistics from the Ethereum node we recommend running the app on the same host. The usage information about the node like cpu and memory load cannot be extracted if on a different host.
 
 ## Register node
@@ -93,7 +98,10 @@ $ ethstats-cli --register --account-email your@email.com --node-name your_node_n
 
 For more details on these options please see [CLI Options](#cli-options). 
 
-If the node is already registered and you still specify the `--register` option, it will be avoided. A new registration is possible if the [config file](#config-file) is deleted. 
+If the node is already registered and you still specify the `--register` option, it will be avoided. 
+A new registration is possible if the [config file](#config-file) is deleted. 
+
+NOTE: Every registered node will and must have its own secret key.
 
 ## Config file
 After the node was successfully registered, a config file is created in the following location: 
@@ -107,6 +115,31 @@ It persists the node name, the secret key received on successfully registration 
   - `--client-url`
   - `--client-ipc-path`
   - `--network`
+
+## Node recovery
+
+IMPORTANT: This is available ONLY in interactive mode.
+
+If you lost your secret key or config file or accidentally deleted it and want to use the same node name previously registered, there is possible to recover it.
+To do that start `ethstats-cli` and on startup by not having a config file it will try to register by asking you:
+```
+? Do you wish to install as a new node or as an existing one ?
+  New node
+> Existing node
+```
+Using arrow keys select "Existing node", then you need to enter your email account which was used to register your node.
+
+```
+? Please enter account email: 
+```
+After typing that in, next an email will be sent to that account with a list of all nodes registered with that email account. Every node name in the list will have attached a recovery hash.
+Select the recovery hash of the node you want to recover and type it in at the following step.
+
+```
+? Please enter node recovery hash:
+```
+This should end with a successful registration of an existing node name.
+Keep in mind that the list of recovery hashes sent in the email expires in 30 minutes.
 
 # CLI Options:
 
