@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.19] - 2019-02-28
+- Nethermind support for the latest blocks filter ([#9](https://github.com/Alethio/ethstats-cli/issues/9))
+- Added details for the authentication error if trying to change the network/server ([#9](https://github.com/Alethio/ethstats-cli/issues/9)) 
+- Updated Readme file with more details ([#9](https://github.com/Alethio/ethstats-cli/issues/9))
+- Fixed syncing bug 
+
 ## [2.4.18] - 2019-02-18
 - Show correct dashboard url when app starts
 - Improvements reconnecting with the Ethereum node 
