@@ -23,7 +23,7 @@ curl -s -v -w "\n%{http_code}" -H "$HEADER" --data "$DATA_TO_SEND" -X POST "$DOC
     echo "Http Code: $code";
     echo "Body: $body";
 
-    if [ $code -eq 200 ]; then
+    if [[ $code -eq 200 || $code -eq 202 ]]; then
         exit 0;
     else
         exit 1;
