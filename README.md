@@ -51,7 +51,7 @@ With [npm](https://www.npmjs.com):
 ```sh
 npm install -g ethstats-cli
 ```
-If you encounter permissions issues at install time please see troubleshooting section: [NPM global package permissions problem](#npm-global-package-permissions-problem)
+If you encounter permissions issues at install time please see [troubleshooting](https://github.com/Alethio/ethstats-cli/blob/master/TROUBLESHOOTING.md) section.
 
 Or [yarn](https://yarnpkg.com):
 ```sh
