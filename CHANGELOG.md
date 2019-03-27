@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.20] - 2019-03-27
+- Update register text and readme file
+
 ## [2.4.19] - 2019-02-28
 - Nethermind support for the latest blocks filter ([#9](https://github.com/Alethio/ethstats-cli/issues/9))
 - Added details for the authentication error if trying to change the network/server ([#9](https://github.com/Alethio/ethstats-cli/issues/9)) 

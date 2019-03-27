@@ -123,7 +123,7 @@ IMPORTANT: This is available ONLY in interactive mode.
 If you lost your secret key or config file or accidentally deleted it and want to use the same node name previously registered, there is possible to recover it.
 To do that start `ethstats-cli` and on startup by not having a config file it will try to register by asking you:
 ```
-? Do you wish to install as a new node or as an existing one ?
+? Is your node already registered ?
   New node
 > Existing node
 ```
@@ -240,6 +240,8 @@ run -d \
 node:latest \
 /bin/sh -c "yarn global add ethstats-cli && ethstats-cli --register --account-email your@email.com --node-name your_node_name"
 ```
+
+IMPORTANT: If you are running `ethstats-cli` through docker on a Mac OS X and the node is running on the same host, but not through docker make sure you specify the correct client url by adding `--client-url http://docker.for.mac.localhost:8545`
 
 ## Updating
 

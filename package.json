@@ -1,6 +1,6 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.19",
+  "version": "2.4.20",
   "description": "EthStats - Network Monitor - CLI Client",
   "homepage": "https://github.com/alethio/ethstats-cli",
   "author": {
