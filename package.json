@@ -52,7 +52,6 @@
     "update-notifier": "2.5.0",
     "web3-0.x-wrapper": "1.0.0",
     "web3": "1.0.0-beta.37",
-    "sprintf-js": "1.1.2",
     "node-cleanup": "2.1.2",
     "lodash": "4.17.11",
     "request": "2.88.0",
