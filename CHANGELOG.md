@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.4.21] - 2019-04-02
+- Remove "sprintf" npm package due to memory leaks
+- Update npm dependent packages to latest versions
+
 ## [2.4.20] - 2019-03-27
 - Update register text and readme file
 
