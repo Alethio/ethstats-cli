@@ -1,15 +1,16 @@
 # ethstats-cli [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> EthStats - Network Monitor - CLI Client 
+> EthStats - CLI Client 
 >   
 >
-> The application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Network Monitor - Server` for analytics purposes.  
+> The application connects to your Ethereum node through RPC and extract data that will be sent to the `EthStats - Server` for analytics purposes.  
 
 # Live deployments
 See active nodes or add your own on the following running deployments of the EthStats Network Monitor 
 
- - Mainnet - [net.ethstats.io](https://net.ethstats.io/)  
- - Görli Testnet - [net.goerli.ethstats.io](https://net.goerli.ethstats.io/)
+ - Mainnet - [ethstats.io](https://ethstats.io/)  
+ - Rinkeby Testnet - [rinkeby.ethstats.io](https://rinkeby.ethstats.io/)
+ - Görli Testnet - [goerli.ethstats.io](https://goerli.ethstats.io/)
 
 # Supported Ethereum nodes
 Geth, Parity, Pantheon, basically any Ethereum node that has RPC enabled.
@@ -151,7 +152,7 @@ Keep in mind that the list of recovery hashes sent in the email expires in 30 mi
 
   --server-url              Server URL (Must include protocol and port if any)
   --net, -n                 Specify Ethereum network your node is running on (Default: mainnet)
-                            Available networks: mainnet|goerli
+                            Available networks: mainnet|rinkeby|goerli
                             If --server-url is specified, this option is ignored
 
   --client-url              Client URL (Must include protocol and port if any; Default: http://localhost:8545)
