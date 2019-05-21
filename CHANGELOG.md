@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.5.0] - 2019-05-21
+- Add WebSocket API improvements
+- Add support for "stats.pendingTxs"
+- Remove ".net" subdomain
+
 ## [2.4.21] - 2019-04-02
 - Remove "sprintf" npm package due to memory leaks
 - Update npm dependent packages to latest versions

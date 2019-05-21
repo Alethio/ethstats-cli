@@ -1,20 +1,13 @@
 {
   "name": "ethstats-cli",
-  "version": "2.4.21",
+  "version": "2.5.0",
   "description": "EthStats - CLI Client",
   "homepage": "https://github.com/alethio/ethstats-cli",
   "author": {
-    "name": "Marian Oancea",
-    "email": "marian.oancea@consensys.net",
-    "url": "https://github.com/cubedro"
+    "name": "Adrian Sabau",
+    "email": "adrian.sabau@consensys.net",
+    "url": "https://github.com/baxy"
   },
-  "contributors": [
-    {
-      "name": "Adrian Sabau",
-      "email": "adrian.sabau@consensys.net",
-      "url": "https://github.com/baxy"
-    }
-  ],
   "preferGlobal": true,
   "directories": {
     "bin": "./bin",
