@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.5.1] - 2019-05-22
+- Add support for "clientTimeout" messages from the server
+
 ## [2.5.0] - 2019-05-21
 - Add WebSocket API improvements
 - Add support for "stats.pendingTxs"
