@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.5.2] - 2019-05-23
+- Fixed output on the stats variables sent to the server
+
 ## [2.5.1] - 2019-05-22
 - Add support for "clientTimeout" messages from the server
 
