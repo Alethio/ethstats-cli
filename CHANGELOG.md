@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.5.3] - 2019-06-06
+- Add support for sending to the server validators/signers on "clique" POA networks
+
 ## [2.5.2] - 2019-05-23
 - Fixed output on the stats variables sent to the server
 
