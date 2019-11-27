@@ -13,7 +13,7 @@ See active nodes or add your own on the following running deployments of the Eth
  - Görli Testnet - [goerli.ethstats.io](https://goerli.ethstats.io/)
 
 # Supported Ethereum nodes
-Geth, Parity, Pantheon, basically any Ethereum node that has RPC enabled.
+Geth, Parity, Besu, basically any Ethereum node that has RPC enabled.
 
 # Contents
   - [Getting Started](#getting-started)
